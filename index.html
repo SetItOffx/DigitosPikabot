@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Dígitos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px;
+            text-align: center;
+        }
+        input, button {
+            font-size: 16px;
+            margin: 10px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .image-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .image-wrapper img {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-wrapper">
+        <img src="https://i.imgur.com/AjgeVei.png" alt="Decoración izquierda">
+        <div class="container">
+            <h1>Suma de Dígitos</h1>
+            <p>Ingresa un número para sumar todos sus dígitos:</p>
+            <input type="number" id="numberInput" placeholder="Ejemplo: 345">
+            <button onclick="sumDigits()">Calcular</button>
+            <p id="result"></p>
+        </div>
+        <img src="https://i.imgur.com/AjgeVei.png" alt="Decoración derecha">
+    </div>
+    <script>
+        function sumDigits() {
+            const number = document.getElementById('numberInput').value;
+            const digits = number.split('').map(Number);
+            const sum = digits.reduce((a, b) => a + b, 0);
+            document.getElementById('result').textContent = `La suma de los dígitos es: ${sum}`;
+        }
+    </script>
+</body>
+</html>
